@@ -201,7 +201,7 @@ func (c *Client) GetRandomPhoto() (*Photo, error) {
 	return nil, err
 }
 
-func (c *Client) SearchVideo(query, perPage, page int) (*VideoSearchResult, error) {
+func (c *Client) SearchVideo(query string, perPage, page int) (*VideoSearchResult, error) {
 	url := fmt.Sprintf(VideoApi+"/search?query=%s&per_page=%d&page=%d", query, perPage, page)
 	resp, err := c.requestDoWithAuth("GET", url)
 
